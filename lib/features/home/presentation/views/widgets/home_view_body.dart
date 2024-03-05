@@ -18,7 +18,7 @@ SliverToBoxAdapter(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       const CustomAppBar(),
-      const CustomOfferWidget(),
+       CustomOfferWidget(),
       Padding(
         padding: const EdgeInsetsDirectional.symmetric(
             horizontal: 12, vertical: 8),

@@ -20,7 +20,10 @@ abstract class Styles{
       fontSize: 24,
       fontWeight: FontWeight.w600
   );
-
+  static const textStyle20 =TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.w800
+  );
   static const textStyle18 =TextStyle(
       fontSize: 18,
       fontWeight: FontWeight.w600

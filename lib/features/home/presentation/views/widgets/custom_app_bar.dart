@@ -1,3 +1,4 @@
+import 'package:az_store/core/widgets/custom_icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -18,9 +19,7 @@ class CustomAppBar extends StatelessWidget {
             height: 40,
           ),
           const Spacer(),
-          IconButton(onPressed: (){},
-              icon: const Icon(FontAwesomeIcons.magnifyingGlass,size: 35)
-          ),
+          const CustomIconButton(iconSize: 35, icon: FontAwesomeIcons.magnifyingGlass),
          Container(
            width: 35,
            height: 35,

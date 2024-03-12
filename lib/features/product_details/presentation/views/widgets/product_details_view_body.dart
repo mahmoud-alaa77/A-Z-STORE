@@ -1,4 +1,3 @@
-import 'package:az_store/features/home/presentation/views/widgets/product_item.dart';
 import 'package:az_store/features/product_details/presentation/views/widgets/similar_products_list_view.dart';
 import 'package:flutter/material.dart';
 
@@ -88,13 +87,13 @@ class ProductDetailsViewBody extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 32,
           ),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16),
             child: Text(
-              "you can also like",
+              "You may like",
               style: Styles.textStyle18,
             ),
           ),

@@ -16,7 +16,7 @@ class CustomAppBar extends StatelessWidget {
       child: Row(
         children: [
           Image.asset(kLogoPath,
-            height: 40,
+            height: 52,
           ),
           const Spacer(),
           const CustomIconButton(iconSize: 35, icon: FontAwesomeIcons.magnifyingGlass),
@@ -28,7 +28,7 @@ class CustomAppBar extends StatelessWidget {
            ),
            child: ClipRRect(
                borderRadius: BorderRadiusDirectional.circular(12),
-               child: Image.network("https://scontent.fcai20-3.fna.fbcdn.net/v/t39.30808-6/242091114_2985289715017504_8076472321968409588_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=9c7eae&_nc_ohc=dw3MnnlOR-UAX8IxjCH&_nc_ht=scontent.fcai20-3.fna&oh=00_AfC1KoR9JOKOmF1VuT6p5yNJ4dRAfaRPfrwq85B170TJ2w&oe=65EB371B")),
+               child: Image.network("https://scontent.fcai20-3.fna.fbcdn.net/v/t39.30808-6/431165292_3645069129039556_8659542599365434935_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=mwSsO7f7Ti4AX8xJBlX&_nc_ht=scontent.fcai20-3.fna&oh=00_AfDVkrkU0w24_pG1AJr7x2G3PNwpmi6sAc2yB0Zwm36XJA&oe=65F4B6D0")),
          )
         ],
       ),

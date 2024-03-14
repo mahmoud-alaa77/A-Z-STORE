@@ -1,34 +1,28 @@
 
+import 'package:az_store/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/constants.dart';
 import 'category_item.dart';
 
-class ListViewOfCategories extends StatefulWidget {
+class ListViewOfCategories extends StatelessWidget {
   const ListViewOfCategories({super.key});
 
   @override
-  State<ListViewOfCategories> createState() => _ListViewOfCategoriesState();
-}
-
-class _ListViewOfCategoriesState extends State<ListViewOfCategories> {
-
-  int selectedIndex=0;
-  @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 80,
+      height: 120,
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) {
           return CategoryItem(
-            fillColor: selectedIndex == index ? kPrimaryColor : Colors.grey.withOpacity(.05),
-            textColor: selectedIndex == index ? Colors.white : Colors.black,
+            fillColor: Colors.white,
+            textColor:  Colors.black,
             categoryTitle: categories[index],
+            categoryIcon:"assets/images/category_icons/$index.png" ,
             onTap: (){
-              setState(() {
-                selectedIndex=index;
-              });
+              GoRouter.of(context).push(AppRouter.kProductsView,extra:categories[index]);
             },
           );
         },
@@ -44,6 +38,3 @@ class _ListViewOfCategoriesState extends State<ListViewOfCategories> {
 
 
 
-List<String> categories=[
-  "All","Electronics","Clothing","Food and Groceries","Furniture","Jewelry"
-];

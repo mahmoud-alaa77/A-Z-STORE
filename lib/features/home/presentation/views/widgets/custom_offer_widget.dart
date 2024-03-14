@@ -44,7 +44,7 @@ class _CustomOfferWidgetState extends State<CustomOfferWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.symmetric(horizontal: 12,),
       child: Container(
         width: MediaQuery.of(context).size.width,
         constraints: BoxConstraints(

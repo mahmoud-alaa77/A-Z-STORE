@@ -12,21 +12,20 @@ class OnBoardingViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var pageDecoration =  PageDecoration(
+    var pageDecoration =  const PageDecoration(
       titleTextStyle: Styles.textStyle24,
       bodyAlignment: Alignment.center,
       imageFlex: 2,
-      pageColor: Colors.grey.withOpacity(.1),
 
     );
 
     return IntroductionScreen(
       globalBackgroundColor: Colors.white,
       globalHeader:  Align(
-        alignment: Alignment.topRight,
+        alignment: Alignment.topLeft,
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.only(top: 16, right: 16),
+            padding: const EdgeInsets.only(top: 8, left: 16),
             child: Image.asset(
               kLogoPath,
               width: 50,
@@ -34,6 +33,7 @@ class OnBoardingViewBody extends StatelessWidget {
           ),
         ),
       ),
+
       pages: [
         PageViewModel(
           title: "Explore a wide range of products",
@@ -55,9 +55,10 @@ class OnBoardingViewBody extends StatelessWidget {
           decoration: pageDecoration,
         ),
       ],
-      onDone: () => GoRouter.of(context).push(AppRouter.kHomeView),
+      onDone: () => GoRouter.of(context).
+      push(AppRouter.kHomeView),
       onSkip: () => GoRouter.of(context)
-          .push(AppRouter.kHomeView), // You can override onSkip callback
+          .push(AppRouter.kHomeView),
       showSkipButton: true,
       dotsFlex: 0,
       nextFlex: 0,
@@ -70,18 +71,24 @@ class OnBoardingViewBody extends StatelessWidget {
         color: kPrimaryColor,
         size: 40,
       ),
-      done:  Text("Next",
-           style: Styles.textStyle20.copyWith(color: Colors.white)),
+      done:  Row(
+        children: [
+          Text("Get Started",
+              style: Styles.textStyle20.copyWith(color: Colors.white)),
+          const Icon(Icons.arrow_forward_ios,color: Colors.white,)
+        ],
+      ),
       controlsMargin: const EdgeInsets.all(16),
       controlsPadding: const EdgeInsets.all(4),
       dotsDecorator: getDotsDecorator(),
-      dotsContainerDecorator:  const ShapeDecoration(
-        color: Colors.black38,
+      dotsContainerDecorator:   ShapeDecoration(
+        color: Colors.black.withOpacity(.8),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(8.0)),
         ),
       ),
       animationDuration: 500,
+
 
     );
   }
@@ -99,7 +106,8 @@ DotsDecorator getDotsDecorator() {
     activeSize: Size(22.0, 10.0),
     activeColor: kPrimaryColor,
     activeShape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(25.0)),
+      borderRadius: BorderRadius.all(Radius.circular(16.0)),
+
     ),
   );
 }

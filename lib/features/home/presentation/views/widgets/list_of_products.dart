@@ -5,15 +5,16 @@ import 'package:flutter/material.dart';
 
 
 class ListOfProduct extends StatelessWidget {
-  const ListOfProduct({super.key});
-
+  const ListOfProduct({super.key, required this.shrinkWrapValue, this.scrollPhysics});
+final bool shrinkWrapValue;
+final ScrollPhysics? scrollPhysics;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8),
       child: GridView.builder(
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
+        shrinkWrap: shrinkWrapValue,
+        physics: scrollPhysics,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, // number of items in each row
           mainAxisSpacing: 8.0, // spacing between rows

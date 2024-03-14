@@ -1,6 +1,7 @@
+import 'package:az_store/core/utils/app_router.dart';
 import 'package:az_store/core/widgets/custom_icon_button.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/constants.dart';
 
@@ -11,7 +12,7 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsetsDirectional.symmetric(
-          vertical: 16,horizontal: 12
+          vertical: 12,horizontal: 12
       ),
       child: Row(
         children: [
@@ -19,7 +20,11 @@ class CustomAppBar extends StatelessWidget {
             height: 52,
           ),
           const Spacer(),
-          const CustomIconButton(iconSize: 35, icon: FontAwesomeIcons.magnifyingGlass),
+           CustomIconButton(iconSize: 40, icon: Icons.search,
+          onPressed: () {
+            GoRouter.of(context).push(AppRouter.kSearchView);
+          },
+          ),
          Container(
            width: 35,
            height: 35,

@@ -1,6 +1,5 @@
 
 import 'package:az_store/core/utils/app_router.dart';
-import 'package:az_store/features/product_details/presentation/views/widgets/custom_rating_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -11,7 +10,7 @@ class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 300,
+      width: MediaQuery.of(context).size.width/2,
       child: Column(crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
@@ -36,12 +35,13 @@ class ProductItem extends StatelessWidget {
 
           ),
           Row(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Text("\$120",
                 style: Styles.textStyle18.copyWith(fontSize: 16),
               ),
-              Spacer(),
-              Icon(Icons.star,color: Colors.amber,),
+              const Spacer(),
+              const Icon(Icons.star,color: Colors.amber,),
               Text("4.5",style: Styles.textStyle16.copyWith(fontWeight: FontWeight.w300),)
             ],
           )
